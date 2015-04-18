@@ -108,13 +108,11 @@ begin
     -- input signals
     read_req, write_req, clear_store, reset,
     -- state variables
-    ip_ram, mac_ram, st_state, next_write_addr, num_entries,
+    st_state, next_write_addr, num_entries,
     next_read_addr, entry_found, mode, req_entry,
     -- busses
-    next_st_state, arp_entry_val, mode_val, write_addr, read_result_int, 
+    arp_entry_val
     -- control signals
-    set_st_state, set_next_write_addr, set_num_entries, set_next_read_addr, set_entry_found,
-    write_ram, set_mode
     )
   begin
     -- set output followers
