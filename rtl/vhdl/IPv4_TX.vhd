@@ -258,15 +258,8 @@ begin
           tx_mac_value <= arp_req_rslt.mac;
           set_tx_mac   <= '1';
           set_chn_reqd <= SET;
-                                        -- check for optimise when already have the channel
-          if mac_tx_granted = '1' then
-                                        -- ready to send data
-            next_tx_state <= SEND_ETH_HDR;
-            set_tx_state  <= '1';
-          else
-            next_tx_state <= WAIT_CHN;
-            set_tx_state  <= '1';
-          end if;
+          next_tx_state <= WAIT_CHN;
+          set_tx_state  <= '1';
         elsif arp_req_rslt.got_err = '1' then
           set_mac_lku_req <= CLR;
           next_tx_result  <= IPTX_RESULT_ERR;
